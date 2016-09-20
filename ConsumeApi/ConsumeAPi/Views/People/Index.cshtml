@@ -1,0 +1,41 @@
+﻿@model ConsumeApi.Models.PetOwnersInputOutput
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body><br /><br />
+    <B> Male</B>
+    <div id="male">
+        @if (Model.MalePetOwnerDetails != null)
+        {
+            <ul>
+                @for (var i = 0; i < Model.MalePetOwnerDetails.Count; i++)
+                {
+                    <li> @Model.MalePetOwnerDetails[i].PetName</li>
+
+                }
+            </ul>
+        }
+    </div><br/>
+    <B> Female  </B>
+        <div id="female">
+            @if (Model.FemalePetOwnerDetails != null)
+            {
+                <ul>
+                    @for (var i = 0; i < Model.FemalePetOwnerDetails.Count; i++)
+                {
+                        <li> @Model.FemalePetOwnerDetails[i].PetName</li>
+                    }
+                </ul>
+            }
+        </div>
+</body>
+</html>
